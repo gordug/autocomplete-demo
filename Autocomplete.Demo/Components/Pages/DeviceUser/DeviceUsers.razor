@@ -1,0 +1,46 @@
+﻿@page "/DeviceUsers"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@rendermode InteractiveServer
+
+<AuthorizeView>
+<div class="container">
+    <div class="m-3 bg-info-subtle clearfix">
+        <h3 class="float-left m-2">Device Users</h3>
+        <div class="form-group d-flex m-2">
+            <input type="text" id="search" class="form-control" placeholder="Search" @bind="SearchText" autocomplete="off"/>
+            <button type="button" class="btn btn-dark" @onclick="OnClearSearchCallback">Clear</button>
+        </div>
+        <div class="button-group m-2">
+            <button type="button" class="btn btn-outline-success" @onclick="OnAddDeviceUser" aria-label="Add User">
+                Add
+            </button>
+            <button type="button" class="btn btn-outline-primary" @onclick="OnEditDeviceUser" disabled="@IsEditDialogVisible" aria-label="Edit User">
+                Edit
+            </button>
+            <button type="button" class="btn btn-outline-danger" @onclick="OnDeleteDeviceUser" disabled="@IsEditDialogVisible" aria-label="Delete User">
+                Delete
+            </button>
+        </div>
+    </div>
+    <div class="container table-hover">
+        <table class="table table- " id="userTable">
+            <thead>
+            <tr>
+                <th class="col-xs-6">Forename</th>
+                <th class="col-xs-6">Surname</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var deviceUser in FilterDeviceUsers())
+            {
+                <tr class="clickableRow" data-id=@deviceUser.Id>
+                    <td class="col-xs-6">@deviceUser.Forename</td>
+                    <td class="col-xs-6">@deviceUser.Surname</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+</AuthorizeView>

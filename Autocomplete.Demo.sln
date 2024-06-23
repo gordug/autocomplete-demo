@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autocomplete.Demo", "Autocomplete.Demo\Autocomplete.Demo.csproj", "{82CB04B1-8D7B-4512-9B61-AF3005804345}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82CB04B1-8D7B-4512-9B61-AF3005804345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82CB04B1-8D7B-4512-9B61-AF3005804345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82CB04B1-8D7B-4512-9B61-AF3005804345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82CB04B1-8D7B-4512-9B61-AF3005804345}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

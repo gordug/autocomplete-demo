@@ -1,0 +1,41 @@
+﻿@page "/DeviceUsers/Add"
+
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@rendermode InteractiveServer
+
+<AuthorizeView>
+    <div class="container">
+        <div class="m-3 bg-info-subtle clearfix">
+            <h3 class="float-left m-2">Add Device User</h3>
+            <button type="button" class="btn btn-dark float-right m-2" @onclick="OnCancelCallback">Cancel</button>
+            <button type="button" class="btn btn-success float-right m-2" @onclick="OnSaveCallback">Save</button>
+        </div>
+        <div class="container">
+            <div class="form-group m-2">
+                <label for="forename">Forename</label>
+                <input type="text" id="forename" class="form-control" @bind="ViewModel.Forename" autocomplete="off"/>
+            </div>
+            <div class="form-group m-2">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" class="form-control" @bind="ViewModel.Surname" autocomplete="off"/>
+            </div>
+            <div class="form-group m-2">
+                <label for="keypad">Keypad Id</label>
+                <input type="text" id="keypad" class="form-control" @bind="ViewModel.KeypadId" autocomplete="off"/>
+            </div>
+            <div class="form-group m-2">
+                <label for="card">Card Id</label>
+                <input type="text" id="card" class="form-control" @bind="ViewModel.CardId" autocomplete="off"/>
+            </div>
+            <div class="form-group m-2">
+                <label for="enrollment">Enrollment Id</label>
+                <input type="text" id="enrollment" class="form-control" @bind="ViewModel.EnrolmentId" autocomplete="off"/>
+            </div>
+            <div class="form-group m-2">
+                <label for="pin">Enrollment Id</label>
+                <input type="password" id="pin" class="form-control" @bind="ViewModel.Pin" autocomplete="off"/>
+            </div>
+        </div>
+    </div>
+</AuthorizeView>
